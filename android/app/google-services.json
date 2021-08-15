@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "361864296562",
+    "project_id": "online-planner-c5272",
+    "storage_bucket": "online-planner-c5272.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:361864296562:android:91403c03ed5ec53695eaeb",
+        "android_client_info": {
+          "package_name": "online.planner.online_planner_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "361864296562-lpt01vjm6nmurodhoa31514seulfbg6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB9r3mjFpE18xvVFc_0oAbPM_WYyhzsEo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "361864296562-lpt01vjm6nmurodhoa31514seulfbg6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

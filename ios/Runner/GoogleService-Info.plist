@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>361864296562-bdg27dbr6pmoe3enve42q171vn4fg71r.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.361864296562-bdg27dbr6pmoe3enve42q171vn4fg71r</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDctT0nHTVRV7xiUJF4jG1GBURoAYYg2Bg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>361864296562</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>online.planner.onlinePlannerApp</string>
+	<key>PROJECT_ID</key>
+	<string>online-planner-c5272</string>
+	<key>STORAGE_BUCKET</key>
+	<string>online-planner-c5272.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:361864296562:ios:448566fabda9a8eb95eaeb</string>
+</dict>
+</plist>
