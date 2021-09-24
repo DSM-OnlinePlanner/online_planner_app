@@ -13,24 +13,61 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sliding_up_panel: ^2.0.0+1
   after_layout: ^1.1.0
   cupertino_icons: ^1.0.2
   shared_preferences: ^2.0.6
   page_transition: "^2.0.2"
-  nav: ^1.0.7
   dio: ^4.0.0
   fluttertoast: ^8.0.8
+  timer_count_down: ^2.2.0
+  imagebutton: ^0.0.6
+  flutter_swipe_action_cell: ^2.1.1
+  intl: ^0.17.0
+  draw_graph: ^1.0.0
+  progress_indicators: ^1.0.0
+  flutter_circular_chart_two: ^0.1.2
+  outline_search_bar: ^2.2.0
+  intervalprogressbar: ^2.0.1
+  flutter_tabler_icons: ^1.1.1
+  flutter_animated_dialog: ^2.0.1
+  firebase_core: ^1.6.0
+  firebase_messaging: ^10.0.6
+  curved_drawer_fork: ^0.0.1+1
+  modal_bottom_sheet: ^2.0.0
+  future_progress_dialog: ^0.2.0
+  syncfusion_flutter_calendar: ^19.2.59
+  syncfusion_flutter_datepicker: ^19.2.59
+  bottom_picker: ^1.0.2
+  f_datetimerangepicker: ^0.2.0
+  roundcheckbox: ^2.0.2+1
 
 dev_dependencies:
   flutter_native_splash: ^1.2.0
   flutter_test:
     sdk: flutter
 
+
 flutter:
   assets:
     - assets/images/backround.png
     - assets/images/splash.png
+    - assets/images/check_green.png
+    - assets/images/check_red.png
+    - assets/images/best_planner.png
+    - assets/images/good_gaguck_planner.png
+    - assets/images/gaguck_planner.png
+    - assets/images/just_paper.png
+    - assets/images/free_paper.png
+    - assets/images/spring_planner.png
+    - assets/images/end_tier.png
+    - assets/images/plastic_planner.png
+    - assets/images/notice_check.png
+    - assets/images/change_nick.png
+    - assets/images/change_pw.png
+    - assets/images/delete_account.png
+    - assets/images/achieve_check.png
+    - assets/images/achieve_level.png
+    - assets/images/logo.png
 
   fonts:
     - family: "Noto Sans KR"
