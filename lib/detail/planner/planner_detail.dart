@@ -87,10 +87,7 @@ class _PlannerWidget extends State<PlannerPage> {
           await dio.get(url + '/planner/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken')}), queryParameters: {'date': date});
 
       if (response.statusCode == 200) {
-        if(plannerItem.isNotEmpty)
-          plannerItem.addAll((response.data as List).map((e) => Planner.fromJson(e)).toList());
-        else
-          plannerItem = (response.data as List).map((e) => Planner.fromJson(e)).toList();
+        plannerItem = (response.data as List).map((e) => Planner.fromJson(e)).toList();
       }
       return plannerItem;
     } catch (e) {
@@ -102,11 +99,49 @@ class _PlannerWidget extends State<PlannerPage> {
   }
 
   _retryPlanner() async {
+    await _refreshToken();
     _preferences = await SharedPreferences.getInstance();
     try {
       Dio dio = Dio();
       final response =
           await dio.get(url + '/planner/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken')}), queryParameters: {'date': date});
+
+      if (response.statusCode == 200) {
+        plannerItem = (response.data as List).map((e) => Planner.fromJson(e)).toList();
+      }
+      return plannerItem;
+    } catch (e) {
+      print(e);
+      await _logout();
+    }
+  }
+
+  _pagingPlanner() async {
+    _preferences = await SharedPreferences.getInstance();
+    try {
+      Dio dio = Dio();
+      final response =
+      await dio.get(url + '/planner/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken')}), queryParameters: {'date': date});
+
+      if (response.statusCode == 200) {
+        plannerItem.addAll((response.data as List).map((e) => Planner.fromJson(e)).toList());
+      }
+      return plannerItem;
+    } catch (e) {
+      await _retryPagingPlanner();
+      print(e);
+
+      return plannerItem;
+    }
+  }
+
+  _retryPagingPlanner() async {
+    await _refreshToken();
+    _preferences = await SharedPreferences.getInstance();
+    try {
+      Dio dio = Dio();
+      final response =
+      await dio.get(url + '/planner/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken')}), queryParameters: {'date': date});
 
       if (response.statusCode == 200) {
         plannerItem.addAll((response.data as List).map((e) => Planner.fromJson(e)).toList());
@@ -454,7 +489,7 @@ class _PlannerWidget extends State<PlannerPage> {
           print('length');
           setState(() {
             pageNum++;
-            _getPlanner();
+            _pagingPlanner();
           });
         }
       }

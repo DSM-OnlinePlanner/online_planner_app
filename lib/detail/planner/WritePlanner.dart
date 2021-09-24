@@ -131,7 +131,7 @@ class _WritePlannerWidgetState extends State<WritePlannerWidget> {
             'endDate' : end.substring(0, 4) + '-' + end.substring(5, 7) + '-' + end.substring(8, 10),
             'startTime' : start.substring(11),
             'endTime' : end.substring(11),
-            'pushed' : isPushed
+            'isPushed' : isPushed
           }
         )
       );
@@ -173,7 +173,7 @@ class _WritePlannerWidgetState extends State<WritePlannerWidget> {
                 'endDate' : endDate.substring(0, 4) + '-' + startDate.substring(5, 7) + '-' + startDate.substring(8, 10),
                 'startTime' : startDate.substring(11) + ":00",
                 'endTime' : endDate.substring(11) + ':00',
-                'pushed' : isPushed
+                'isPushed' : isPushed
               }
           )
       );

@@ -224,7 +224,7 @@ class _WriteRoutineWidget extends State<WriteRoutine> {
             'startTime' : startDate,
             'endTime' : endDate,
             'priority' : priority,
-            'pushed' : isPushed
+            'isPushed' : isPushed
           }
         )
       );
@@ -261,7 +261,7 @@ class _WriteRoutineWidget extends State<WriteRoutine> {
                 'startTime' : startDate,
                 'endTime' : endDate,
                 'priority' : priority,
-                'pushed' : isPushed
+                'isPushed' : isPushed
               }
           )
       );

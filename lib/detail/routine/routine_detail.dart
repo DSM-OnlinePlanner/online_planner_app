@@ -333,6 +333,41 @@ class _RoutineWidget extends State<RoutinePage> {
     }
   }
 
+  Future<List<Routine>> _pagingRoutine() async {
+    _preferences = await SharedPreferences.getInstance();
+    try {
+      Dio dio = Dio();
+      final response = await dio.get(url + '/routine/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken') ?? ""}));
+
+      if (response.statusCode == 200) {
+        routineItem.addAll((response.data as List).map((e) => Routine.fromJson(e)).toList());
+      }
+
+      return routineItem;
+    } catch (e) {
+      await _retryPagingRoutine();
+      return routineItem;
+    }
+  }
+
+  _retryPagingRoutine() async {
+    await _refreshToken();
+    _preferences = await SharedPreferences.getInstance();
+    try {
+      Dio dio = Dio();
+      final response = await dio.get(url + '/routine/' + pageNum.toString(), options: Options(headers: {HttpHeaders.authorizationHeader: _preferences.getString('accessToken') ?? ""}));
+
+      if (response.statusCode == 200) {
+        routineItem.addAll((response.data as List).map((e) => Routine.fromJson(e)).toList());
+      }
+
+      return routineItem;
+    } catch (e) {
+      await _retryGetRoutines();
+      return routineItem;
+    }
+  }
+
   _checkUserImage() {
     if (initTier.isNotEmpty) {
       _setUserImage();
@@ -355,7 +390,7 @@ class _RoutineWidget extends State<RoutinePage> {
           print('length');
           setState(() {
             pageNum++;
-            _getRoutine();
+            _retryPagingRoutine();
           });
         }
       }
@@ -1085,7 +1120,8 @@ class _RoutineWidget extends State<RoutinePage> {
                                         }
                                       }
                                     },
-                                  )),
+                                  )
+                              ),
                             ),
                           ],
                         ),
